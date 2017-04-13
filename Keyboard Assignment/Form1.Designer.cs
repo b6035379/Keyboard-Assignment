@@ -451,6 +451,7 @@
             this.btnMode.TabIndex = 73;
             this.btnMode.Text = "Mode";
             this.btnMode.UseVisualStyleBackColor = false;
+            this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
             // 
             // rtxtBuilder
             // 

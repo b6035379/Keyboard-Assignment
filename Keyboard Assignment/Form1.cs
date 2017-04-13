@@ -12,9 +12,40 @@ namespace Keyboard_Assignment
 {
     public partial class Form1 : Form
     {
+        // Flags changes made and thus file needs saving 
+        bool booleanRequiresSaving = false;
+
+        // The Path to the 'Dictionary'
+        string strPresentFilePathName = "";
+
+        // Timing Functionality
+        bool boolFirstVisit = true;
+        int intIntervalRequired = 500;
+
+        // Global ListBox can be place on the Form instead of here. 
+        ListBox lstGlobalListbox = new ListBox();
+        int intMyListIndex = 0;
+
+        // Buttons. Identifies which button is being selected be the user. bool[] boolsButtonPresssed = new bool[19];
+        // Prediction.
+        string Str_KeyStrokes;
+
+        // Is the line from the list that has the highest useage
+        int intPredictedIndex;
+        int intNumberOfCharacters;
+        int intPredictedLength;
+
+        string Mode;
+        
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnMode_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
