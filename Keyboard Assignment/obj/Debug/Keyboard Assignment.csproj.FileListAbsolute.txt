@@ -2,8 +2,8 @@ C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\bin
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.exe
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.pdb
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.csprojResolveAssemblyReference.cache
-C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard_Assignment.Form1.resources
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard_Assignment.Properties.Resources.resources
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.csproj.GenerateResource.Cache
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.exe
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.pdb
+C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard_Assignment.Form_MainWindow.resources

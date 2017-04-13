@@ -1,6 +1,6 @@
 ﻿namespace Keyboard_Assignment
 {
-    partial class Form1
+    partial class Form_MainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lstMode = new System.Windows.Forms.ListBox();
             this.lstHash = new System.Windows.Forms.ListBox();
             this.lst0 = new System.Windows.Forms.ListBox();
@@ -63,6 +64,7 @@
             this.btnMode = new System.Windows.Forms.Button();
             this.rtxtBuilder = new System.Windows.Forms.RichTextBox();
             this.txtNotepad = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lstMode
@@ -400,6 +402,7 @@
             this.btn7.TabIndex = 78;
             this.btn7.Text = "7\r\n.,\"";
             this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // btn8
             // 
@@ -469,7 +472,12 @@
             this.txtNotepad.Size = new System.Drawing.Size(410, 194);
             this.txtNotepad.TabIndex = 71;
             // 
-            // Form1
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.OnTick);
+            // 
+            // Form_MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -509,9 +517,10 @@
             this.Controls.Add(this.btnMode);
             this.Controls.Add(this.rtxtBuilder);
             this.Controls.Add(this.txtNotepad);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Form_MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Keyboard Application";
+            this.Load += new System.EventHandler(this.Form_MainWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,6 +563,7 @@
         private System.Windows.Forms.Button btnMode;
         private System.Windows.Forms.RichTextBox rtxtBuilder;
         private System.Windows.Forms.TextBox txtNotepad;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }

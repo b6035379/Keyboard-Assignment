@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Keyboard_Assignment
 {
-    public partial class Form1 : Form
+    public partial class Form_MainWindow : Form
     {
         // Flags changes made and thus file needs saving 
         bool booleanRequiresSaving = false;
@@ -27,7 +28,7 @@ namespace Keyboard_Assignment
         int intMyListIndex = 0;
 
         // Buttons. Identifies which button is being selected be the user. 
-        bool[] boolsButtonPresssed = new bool[19];
+        bool[] boolButtonPresssed = new bool[18];
 
         // Prediction.
         string Str_KeyStrokes;
@@ -42,7 +43,7 @@ namespace Keyboard_Assignment
         string Prediction = "Prediction";
         
 
-        public Form1()
+        public Form_MainWindow()
         {
             InitializeComponent();
         }
@@ -61,6 +62,7 @@ namespace Keyboard_Assignment
             txtStatus.Text = "Prediction";
         }
 
+
         private void btnMode_Click(object sender, EventArgs e)
         {
             if (Mode == Prediction)
@@ -73,9 +75,32 @@ namespace Keyboard_Assignment
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form_MainWindow_Load(object sender, EventArgs e)
         {
             ModeMultiPress();
+        }
+
+        private void OnTick(object sender, EventArgs e)
+        {
+            //On tick (timer elapsed), enter the letter selected in the array
+            BackColor = Color.Red;
+            timer1.Enabled = false;
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+            {
+
+                timer1.Enabled = false;
+                timer1.Enabled = true;
+            }
+
+            else
+            {
+                timer1.Enabled = true;
+
+            }
         }
     }
 }
