@@ -247,7 +247,7 @@
             this.lst7.FormattingEnabled = true;
             this.lst7.Items.AddRange(new object[] {
             ".",
-            "~",
+            ",",
             "\"",
             "7",
             "\'",

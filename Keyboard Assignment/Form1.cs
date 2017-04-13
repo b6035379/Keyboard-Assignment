@@ -37,6 +37,8 @@ namespace Keyboard_Assignment
         int intPredictedIndex;
         int intNumberOfCharacters;
         int intPredictedLength;
+        int intTimesClicked = 0;
+        int Index = -1;
 
         string Mode;
         string MultiPress = "Multi-Press";
@@ -62,6 +64,32 @@ namespace Keyboard_Assignment
             txtStatus.Text = "Prediction";
         }
 
+        private void Reset() //Resets the Index number, times a button has been clicked, and disables the timer.
+    {
+        Index = 0;
+        intTimesClicked = 0;
+    }
+
+        private void ButtonClicked()
+        {
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            intTimesClicked = intTimesClicked + 1;
+            Index = -1 + intTimesClicked;
+        }
+
+        private void CycleThrough()
+        {
+            if (Index < 6)
+            {
+                ButtonClicked();
+            }
+            else
+            {
+                Reset();
+                ButtonClicked();
+            }
+        }
 
         private void btnMode_Click(object sender, EventArgs e)
         {
@@ -78,29 +106,21 @@ namespace Keyboard_Assignment
         private void Form_MainWindow_Load(object sender, EventArgs e)
         {
             ModeMultiPress();
+            Reset();
         }
 
         private void OnTick(object sender, EventArgs e)
         {
             //On tick (timer elapsed), enter the letter selected in the array
-            BackColor = Color.Red;
-            timer1.Enabled = false;
+            timer1.Enabled = false; 
+            rtxtBuilder.Text = rtxtBuilder.Text + lst7.Items[Index].ToString(); 
+            Reset();
+
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            if (timer1.Enabled == true)
-            {
-
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-            }
-
-            else
-            {
-                timer1.Enabled = true;
-
-            }
+            CycleThrough();
         }
     }
 }
