@@ -122,5 +122,22 @@ namespace Keyboard_Assignment
         {
             CycleThrough();
         }
+
+        private void txtNotepad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            txtNotepad.AppendText(Environment.NewLine);
+        }
+
+        private void btn000_Click(object sender, EventArgs e)
+        {
+            txtNotepad.AppendText(rtxtBuilder.Text + " ");
+            Str_KeyStrokes = string.Empty;
+            rtxtBuilder.Clear();
+        }
     }
 }

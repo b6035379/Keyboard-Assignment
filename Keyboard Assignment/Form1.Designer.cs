@@ -286,6 +286,7 @@
             this.btn000.TabIndex = 90;
             this.btn000.Text = "000\r\n[_]";
             this.btn000.UseVisualStyleBackColor = false;
+            this.btn000.Click += new System.EventHandler(this.btn000_Click);
             // 
             // btnHash
             // 
@@ -313,6 +314,7 @@
             this.btnEnter.TabIndex = 87;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // btnEmpty2
             // 
@@ -471,6 +473,7 @@
             this.txtNotepad.Name = "txtNotepad";
             this.txtNotepad.Size = new System.Drawing.Size(410, 194);
             this.txtNotepad.TabIndex = 71;
+            this.txtNotepad.TextChanged += new System.EventHandler(this.txtNotepad_TextChanged);
             // 
             // timer1
             // 
