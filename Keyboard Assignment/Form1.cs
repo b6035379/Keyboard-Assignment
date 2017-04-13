@@ -26,7 +26,9 @@ namespace Keyboard_Assignment
         ListBox lstGlobalListbox = new ListBox();
         int intMyListIndex = 0;
 
-        // Buttons. Identifies which button is being selected be the user. bool[] boolsButtonPresssed = new bool[19];
+        // Buttons. Identifies which button is being selected be the user. 
+        bool[] boolsButtonPresssed = new bool[19];
+
         // Prediction.
         string Str_KeyStrokes;
 
@@ -36,6 +38,8 @@ namespace Keyboard_Assignment
         int intPredictedLength;
 
         string Mode;
+        string MultiPress = "Multi-Press";
+        string Prediction = "Prediction";
         
 
         public Form1()
@@ -43,9 +47,35 @@ namespace Keyboard_Assignment
             InitializeComponent();
         }
 
+        private void ModeMultiPress()
+        {
+            txtStatus.Clear(); 
+            Mode = MultiPress;
+            txtStatus.Text = "Multi-Press";
+        }
+
+        private void ModePrediction()
+        {
+            txtStatus.Clear();
+            Mode = Prediction;
+            txtStatus.Text = "Prediction";
+        }
+
         private void btnMode_Click(object sender, EventArgs e)
         {
+            if (Mode == Prediction)
+            {
+                ModeMultiPress(); //Calls Multi-Press Class
+            }
+            else
+            {
+                ModePrediction(); //Calls Prediction Class
+            }
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            ModeMultiPress();
         }
     }
 }
