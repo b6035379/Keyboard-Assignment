@@ -43,7 +43,7 @@ namespace Keyboard_Assignment
         string Mode;
         string MultiPress = "Multi-Press";
         string Prediction = "Prediction";
-        
+
 
         public Form_MainWindow()
         {
@@ -52,7 +52,7 @@ namespace Keyboard_Assignment
 
         private void ModeMultiPress()
         {
-            txtStatus.Clear(); 
+            txtStatus.Clear();
             Mode = MultiPress;
             txtStatus.Text = "Multi-Press";
         }
@@ -65,10 +65,10 @@ namespace Keyboard_Assignment
         }
 
         private void Reset() //Resets the Index number, times a button has been clicked, and disables the timer.
-    {
-        Index = 0;
-        intTimesClicked = 0;
-    }
+        {
+            Index = 0;
+            intTimesClicked = 0;
+        }
 
         private void ButtonClicked()
         {
@@ -109,11 +109,11 @@ namespace Keyboard_Assignment
             Reset();
         }
 
-        private void OnTick(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             //On tick (timer elapsed), enter the letter selected in the array
-            timer1.Enabled = false; 
-            rtxtBuilder.Text = rtxtBuilder.Text + lst7.Items[Index].ToString(); 
+            timer1.Enabled = false;
+            rtxtBuilder.Text = rtxtBuilder.Text + lst7.Items[Index].ToString();
             Reset();
 
         }
@@ -122,6 +122,7 @@ namespace Keyboard_Assignment
         {
             CycleThrough();
         }
+        
 
         private void txtNotepad_TextChanged(object sender, EventArgs e)
         {
@@ -139,5 +140,7 @@ namespace Keyboard_Assignment
             Str_KeyStrokes = string.Empty;
             rtxtBuilder.Clear();
         }
+
+        
     }
 }
