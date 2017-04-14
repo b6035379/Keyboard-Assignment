@@ -344,6 +344,7 @@
             this.btn1.TabIndex = 84;
             this.btn1.Text = "1\r\nPQRS";
             this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // btn2
             // 
@@ -354,6 +355,7 @@
             this.btn2.TabIndex = 83;
             this.btn2.Text = "2\r\nTUV";
             this.btn2.UseVisualStyleBackColor = false;
+            this.btn2.Click += new System.EventHandler(this.btn2_Click);
             // 
             // btn3
             // 
@@ -364,6 +366,7 @@
             this.btn3.TabIndex = 82;
             this.btn3.Text = "3\r\nWXYZ";
             this.btn3.UseVisualStyleBackColor = false;
+            this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
             // btn4
             // 
@@ -374,6 +377,7 @@
             this.btn4.TabIndex = 81;
             this.btn4.Text = "4\r\nGHI";
             this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // btn5
             // 
@@ -384,6 +388,7 @@
             this.btn5.TabIndex = 80;
             this.btn5.Text = "5\r\nJKL";
             this.btn5.UseVisualStyleBackColor = false;
+            this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
             // btn6
             // 
@@ -394,6 +399,7 @@
             this.btn6.TabIndex = 79;
             this.btn6.Text = "6\r\nMNO";
             this.btn6.UseVisualStyleBackColor = false;
+            this.btn6.Click += new System.EventHandler(this.btn6_Click);
             // 
             // btn7
             // 
@@ -415,6 +421,7 @@
             this.btn8.TabIndex = 77;
             this.btn8.Text = "8\r\nABC";
             this.btn8.UseVisualStyleBackColor = false;
+            this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
             // btn9
             // 
@@ -425,6 +432,7 @@
             this.btn9.TabIndex = 76;
             this.btn9.Text = "9\r\nDEF";
             this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // btnPrevious
             // 

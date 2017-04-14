@@ -27,6 +27,19 @@ namespace Keyboard_Assignment
         ListBox lstGlobalListbox = new ListBox();
         int intMyListIndex = 0;
 
+        //Character Buttons Array
+        string[] button1Array = { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
+        string[] button2Array = { "t", "u", "v", "2", "T", "U", "V" };
+        string[] button3Array = { "w", "x", "y", "z", "3", "W", "X", "Y", "Z" };
+        string[] button4Array = { "g", "h", "i", "4", "G", "H", "I" };
+        string[] button5Array = { "j", "k", "l", "5", "J", "K", "L" };
+        string[] button6Array = { "m", "n", "o", "6", "M", "N", "O" };
+        string[] button7Array = { ".", ",", "\"", "7", "'", ":", ";" };
+        string[] button8Array = { "a", "b", "c", "8", "A", "B", "C" };
+        string[] button9Array = { "d", "e", "f", "9", "D", "E", "F" };
+        string[] buttonHashArray = { "#", "-", "_" };
+
+
         // Buttons. Identifies which button is being selected be the user. 
         bool[] boolButtonPresssed = new bool[18];
 
@@ -70,15 +83,15 @@ namespace Keyboard_Assignment
             intTimesClicked = 0;
         }
 
-        private void ButtonClicked()
+        /*private void ButtonClicked()
         {
             timer1.Enabled = false;
             timer1.Enabled = true;
             intTimesClicked = intTimesClicked + 1;
             Index = -1 + intTimesClicked;
-        }
+        }*/
 
-        private void CycleThrough()
+       /* private void CycleThrough()
         {
             if (Index < 6)
             {
@@ -89,7 +102,7 @@ namespace Keyboard_Assignment
                 Reset();
                 ButtonClicked();
             }
-        }
+        }*/
 
         private void btnMode_Click(object sender, EventArgs e)
         {
@@ -113,14 +126,14 @@ namespace Keyboard_Assignment
         {
             //On tick (timer elapsed), enter the letter selected in the array
             timer1.Enabled = false;
-            rtxtBuilder.Text = rtxtBuilder.Text + lst7.Items[Index].ToString();
-            Reset();
+            boolFirstVisit = false;
 
         }
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            CycleThrough();
+            boolButtonPresssed[7] = true;
+                //CycleThrough();
         }
         
 
@@ -139,6 +152,81 @@ namespace Keyboard_Assignment
             txtNotepad.AppendText(rtxtBuilder.Text + " ");
             Str_KeyStrokes = string.Empty;
             rtxtBuilder.Clear();
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            if (boolFirstVisit == false)
+            {
+                boolFirstVisit = true;
+                boolButtonPresssed[1] = true;
+                intTimesClicked = 0;
+                timer1.Enabled = true;
+
+                if (intTimesClicked < button1Array.Length)
+                {
+                    intTimesClicked = intTimesClicked + 1;
+                    rtxtBuilder.Text = rtxtBuilder.Text + button1Array[intTimesClicked - 1];
+                }
+                else
+                {
+                    intTimesClicked = 0;
+                    rtxtBuilder.Text = rtxtBuilder.Text + button1Array[intTimesClicked - 1];
+                    intTimesClicked = intTimesClicked + 1;
+                }
+            }
+
+            else
+            {
+                boolButtonPresssed[1] = true;
+                if (intTimesClicked < button1Array.Length)
+                {
+                    intTimesClicked = intTimesClicked + 1;
+                    rtxtBuilder.Text = rtxtBuilder.Text + button1Array[intTimesClicked - 1];
+                }
+                else
+                {
+                    intTimesClicked = 0;
+                }
+            }
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[2] = true;
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[3] = true;
+        }
+
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[4] = true;
+        }
+
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[5] = true;
+        }
+
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[6] = true;
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[8] = true;
+        }
+
+        private void btn9_Click(object sender, EventArgs e)
+        {
+            boolButtonPresssed[9] = true;
         }
 
         
