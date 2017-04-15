@@ -28,7 +28,7 @@ namespace Keyboard_Assignment
         int intMyListIndex = 0;
 
         //Character Buttons Array
-        string[] button1Array = { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
+        string[] button1Array = new string [9] { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
         string[] button2Array = { "t", "u", "v", "2", "T", "U", "V" };
         string[] button3Array = { "w", "x", "y", "z", "3", "W", "X", "Y", "Z" };
         string[] button4Array = { "g", "h", "i", "4", "G", "H", "I" };
@@ -50,8 +50,10 @@ namespace Keyboard_Assignment
         int intPredictedIndex;
         int intNumberOfCharacters;
         int intPredictedLength;
-        int intTimesClicked = 0;
-        int Index = -1;
+        int intTimesClicked = -1;
+
+        //
+        string charChosen;
 
         string Mode;
         string MultiPress = "Multi-Press";
@@ -75,12 +77,6 @@ namespace Keyboard_Assignment
             txtStatus.Clear();
             Mode = Prediction;
             txtStatus.Text = "Prediction";
-        }
-
-        private void Reset() //Resets the Index number, times a button has been clicked, and disables the timer.
-        {
-            Index = 0;
-            intTimesClicked = 0;
         }
 
         /*private void ButtonClicked()
@@ -119,7 +115,6 @@ namespace Keyboard_Assignment
         private void Form_MainWindow_Load(object sender, EventArgs e)
         {
             ModeMultiPress();
-            Reset();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -154,45 +149,54 @@ namespace Keyboard_Assignment
             rtxtBuilder.Clear();
         }
 
+
         private void btn1_Click(object sender, EventArgs e)
         {
 
             timer1.Enabled = false;
             timer1.Enabled = true;
+            boolButtonPresssed[1] = true;
+
             if (boolFirstVisit == false)
             {
                 boolFirstVisit = true;
-                boolButtonPresssed[1] = true;
-                intTimesClicked = 0;
+
+                intTimesClicked = -1;
                 timer1.Enabled = true;
 
                 if (intTimesClicked < button1Array.Length)
                 {
-                    intTimesClicked = intTimesClicked + 1;
-                    rtxtBuilder.Text = rtxtBuilder.Text + button1Array[intTimesClicked - 1];
+                    intTimesClicked = (intTimesClicked + 1) % button1Array.Length;
+                    charChosen = (button1Array[intTimesClicked]);
+                    txtCharChosen.Text = charChosen;
                 }
                 else
                 {
-                    intTimesClicked = 0;
-                    rtxtBuilder.Text = rtxtBuilder.Text + button1Array[intTimesClicked - 1];
-                    intTimesClicked = intTimesClicked + 1;
+                    intTimesClicked = -1;
                 }
+
             }
 
             else
             {
-                boolButtonPresssed[1] = true;
+
                 if (intTimesClicked < button1Array.Length)
                 {
-                    intTimesClicked = intTimesClicked + 1;
-                    rtxtBuilder.Text = rtxtBuilder.Text + button1Array[intTimesClicked - 1];
+                    intTimesClicked = (intTimesClicked + 1) % button1Array.Length;
+                    charChosen = (button1Array[intTimesClicked]);
+                    txtCharChosen.Text = charChosen;
                 }
                 else
                 {
-                    intTimesClicked = 0;
+                    intTimesClicked = -1;
                 }
+              
+                    rtxtBuilder.Text = rtxtBuilder.Text + txtCharChosen.Text;
+
             }
-        }
+        }		
+		
+        
 
         private void btn2_Click(object sender, EventArgs e)
         {

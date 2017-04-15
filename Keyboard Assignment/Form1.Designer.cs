@@ -65,6 +65,7 @@
             this.rtxtBuilder = new System.Windows.Forms.RichTextBox();
             this.txtNotepad = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.txtCharChosen = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstMode
@@ -488,11 +489,19 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // txtCharChosen
+            // 
+            this.txtCharChosen.Location = new System.Drawing.Point(407, 389);
+            this.txtCharChosen.Name = "txtCharChosen";
+            this.txtCharChosen.Size = new System.Drawing.Size(100, 20);
+            this.txtCharChosen.TabIndex = 106;
+            // 
             // Form_MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(736, 665);
+            this.Controls.Add(this.txtCharChosen);
             this.Controls.Add(this.lstMode);
             this.Controls.Add(this.lstHash);
             this.Controls.Add(this.lst0);
@@ -575,6 +584,7 @@
         private System.Windows.Forms.RichTextBox rtxtBuilder;
         private System.Windows.Forms.TextBox txtNotepad;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox txtCharChosen;
 
     }
 }
