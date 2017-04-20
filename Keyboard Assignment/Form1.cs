@@ -256,7 +256,6 @@ namespace Keyboard_Assignment
             timer1.Enabled = true;
             boolButtonPresssed[4] = true;
 
-
             if (timer1.Enabled == true) //start timer cycle
             {
                 if (_intTimesClicked < button4Array.Length)

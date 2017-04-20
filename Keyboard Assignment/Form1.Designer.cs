@@ -67,7 +67,13 @@
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lstMode
@@ -76,26 +82,27 @@
             this.lstMode.Items.AddRange(new object[] {
             "Multi-Press",
             "Prediction"});
-            this.lstMode.Location = new System.Drawing.Point(417, 283);
+            this.lstMode.Location = new System.Drawing.Point(519, 281);
             this.lstMode.Name = "lstMode";
-            this.lstMode.Size = new System.Drawing.Size(58, 69);
+            this.lstMode.Size = new System.Drawing.Size(64, 69);
             this.lstMode.TabIndex = 105;
+            this.lstMode.Visible = false;
             // 
             // btnEmpty1
             // 
             this.btnEmpty1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEmpty1.Location = new System.Drawing.Point(297, 388);
+            this.btnEmpty1.Location = new System.Drawing.Point(192, 108);
             this.btnEmpty1.Name = "btnEmpty1";
-            this.btnEmpty1.Size = new System.Drawing.Size(55, 47);
+            this.btnEmpty1.Size = new System.Drawing.Size(61, 53);
             this.btnEmpty1.TabIndex = 92;
             this.btnEmpty1.UseVisualStyleBackColor = false;
             // 
             // btnAsterix
             // 
             this.btnAsterix.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAsterix.Location = new System.Drawing.Point(114, 494);
+            this.btnAsterix.Location = new System.Drawing.Point(9, 214);
             this.btnAsterix.Name = "btnAsterix";
-            this.btnAsterix.Size = new System.Drawing.Size(55, 47);
+            this.btnAsterix.Size = new System.Drawing.Size(61, 53);
             this.btnAsterix.TabIndex = 91;
             this.btnAsterix.Text = "* - _";
             this.btnAsterix.UseVisualStyleBackColor = false;
@@ -104,9 +111,9 @@
             // btn000
             // 
             this.btn000.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn000.Location = new System.Drawing.Point(175, 494);
+            this.btn000.Location = new System.Drawing.Point(70, 214);
             this.btn000.Name = "btn000";
-            this.btn000.Size = new System.Drawing.Size(55, 47);
+            this.btn000.Size = new System.Drawing.Size(61, 53);
             this.btn000.TabIndex = 90;
             this.btn000.Text = "000\r\n[_]";
             this.btn000.UseVisualStyleBackColor = false;
@@ -115,9 +122,9 @@
             // btnHash
             // 
             this.btnHash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnHash.Location = new System.Drawing.Point(236, 494);
+            this.btnHash.Location = new System.Drawing.Point(131, 214);
             this.btnHash.Name = "btnHash";
-            this.btnHash.Size = new System.Drawing.Size(55, 47);
+            this.btnHash.Size = new System.Drawing.Size(61, 53);
             this.btnHash.TabIndex = 89;
             this.btnHash.Text = "#\r\n0 00";
             this.btnHash.UseVisualStyleBackColor = false;
@@ -125,17 +132,17 @@
             // 
             // txtStatus
             // 
-            this.txtStatus.Location = new System.Drawing.Point(297, 251);
+            this.txtStatus.Location = new System.Drawing.Point(192, 4);
             this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(55, 20);
+            this.txtStatus.Size = new System.Drawing.Size(61, 20);
             this.txtStatus.TabIndex = 88;
             // 
             // btnEnter
             // 
             this.btnEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEnter.Location = new System.Drawing.Point(297, 441);
+            this.btnEnter.Location = new System.Drawing.Point(192, 161);
             this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(55, 100);
+            this.btnEnter.Size = new System.Drawing.Size(61, 106);
             this.btnEnter.TabIndex = 87;
             this.btnEnter.Text = "Enter";
             this.btnEnter.UseVisualStyleBackColor = false;
@@ -144,18 +151,18 @@
             // btnEmpty2
             // 
             this.btnEmpty2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnEmpty2.Location = new System.Drawing.Point(297, 336);
+            this.btnEmpty2.Location = new System.Drawing.Point(192, 56);
             this.btnEmpty2.Name = "btnEmpty2";
-            this.btnEmpty2.Size = new System.Drawing.Size(55, 47);
+            this.btnEmpty2.Size = new System.Drawing.Size(61, 53);
             this.btnEmpty2.TabIndex = 86;
             this.btnEmpty2.UseVisualStyleBackColor = false;
             // 
             // btnSendPredicted
             // 
             this.btnSendPredicted.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSendPredicted.Location = new System.Drawing.Point(297, 283);
+            this.btnSendPredicted.Location = new System.Drawing.Point(192, 3);
             this.btnSendPredicted.Name = "btnSendPredicted";
-            this.btnSendPredicted.Size = new System.Drawing.Size(55, 47);
+            this.btnSendPredicted.Size = new System.Drawing.Size(61, 53);
             this.btnSendPredicted.TabIndex = 85;
             this.btnSendPredicted.Text = "Send\r\nPre-\r\ndicted";
             this.btnSendPredicted.UseVisualStyleBackColor = false;
@@ -163,9 +170,9 @@
             // btn1
             // 
             this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn1.Location = new System.Drawing.Point(114, 442);
+            this.btn1.Location = new System.Drawing.Point(9, 162);
             this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(55, 47);
+            this.btn1.Size = new System.Drawing.Size(61, 53);
             this.btn1.TabIndex = 84;
             this.btn1.Text = "1\r\nPQRS";
             this.btn1.UseVisualStyleBackColor = false;
@@ -174,9 +181,9 @@
             // btn2
             // 
             this.btn2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn2.Location = new System.Drawing.Point(175, 442);
+            this.btn2.Location = new System.Drawing.Point(70, 162);
             this.btn2.Name = "btn2";
-            this.btn2.Size = new System.Drawing.Size(55, 47);
+            this.btn2.Size = new System.Drawing.Size(61, 53);
             this.btn2.TabIndex = 83;
             this.btn2.Text = "2\r\nTUV";
             this.btn2.UseVisualStyleBackColor = false;
@@ -185,9 +192,9 @@
             // btn3
             // 
             this.btn3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn3.Location = new System.Drawing.Point(236, 442);
+            this.btn3.Location = new System.Drawing.Point(131, 162);
             this.btn3.Name = "btn3";
-            this.btn3.Size = new System.Drawing.Size(55, 47);
+            this.btn3.Size = new System.Drawing.Size(61, 53);
             this.btn3.TabIndex = 82;
             this.btn3.Text = "3\r\nWXYZ";
             this.btn3.UseVisualStyleBackColor = false;
@@ -196,9 +203,9 @@
             // btn4
             // 
             this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn4.Location = new System.Drawing.Point(114, 389);
+            this.btn4.Location = new System.Drawing.Point(9, 109);
             this.btn4.Name = "btn4";
-            this.btn4.Size = new System.Drawing.Size(55, 47);
+            this.btn4.Size = new System.Drawing.Size(61, 53);
             this.btn4.TabIndex = 81;
             this.btn4.Text = "4\r\nGHI";
             this.btn4.UseVisualStyleBackColor = false;
@@ -207,9 +214,9 @@
             // btn5
             // 
             this.btn5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn5.Location = new System.Drawing.Point(175, 389);
+            this.btn5.Location = new System.Drawing.Point(70, 109);
             this.btn5.Name = "btn5";
-            this.btn5.Size = new System.Drawing.Size(55, 47);
+            this.btn5.Size = new System.Drawing.Size(61, 53);
             this.btn5.TabIndex = 80;
             this.btn5.Text = "5\r\nJKL";
             this.btn5.UseVisualStyleBackColor = false;
@@ -218,9 +225,9 @@
             // btn6
             // 
             this.btn6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn6.Location = new System.Drawing.Point(236, 389);
+            this.btn6.Location = new System.Drawing.Point(131, 109);
             this.btn6.Name = "btn6";
-            this.btn6.Size = new System.Drawing.Size(55, 47);
+            this.btn6.Size = new System.Drawing.Size(61, 53);
             this.btn6.TabIndex = 79;
             this.btn6.Text = "6\r\nMNO";
             this.btn6.UseVisualStyleBackColor = false;
@@ -229,9 +236,9 @@
             // btn7
             // 
             this.btn7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn7.Location = new System.Drawing.Point(114, 336);
+            this.btn7.Location = new System.Drawing.Point(9, 56);
             this.btn7.Name = "btn7";
-            this.btn7.Size = new System.Drawing.Size(55, 47);
+            this.btn7.Size = new System.Drawing.Size(61, 53);
             this.btn7.TabIndex = 78;
             this.btn7.Text = "7\r\n.,\"";
             this.btn7.UseVisualStyleBackColor = false;
@@ -240,9 +247,9 @@
             // btn8
             // 
             this.btn8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn8.Location = new System.Drawing.Point(175, 336);
+            this.btn8.Location = new System.Drawing.Point(70, 56);
             this.btn8.Name = "btn8";
-            this.btn8.Size = new System.Drawing.Size(55, 47);
+            this.btn8.Size = new System.Drawing.Size(61, 53);
             this.btn8.TabIndex = 77;
             this.btn8.Text = "8\r\nABC";
             this.btn8.UseVisualStyleBackColor = false;
@@ -251,9 +258,9 @@
             // btn9
             // 
             this.btn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn9.Location = new System.Drawing.Point(236, 336);
+            this.btn9.Location = new System.Drawing.Point(131, 56);
             this.btn9.Name = "btn9";
-            this.btn9.Size = new System.Drawing.Size(55, 47);
+            this.btn9.Size = new System.Drawing.Size(61, 53);
             this.btn9.TabIndex = 76;
             this.btn9.Text = "9\r\nDEF";
             this.btn9.UseVisualStyleBackColor = false;
@@ -262,9 +269,9 @@
             // btnPrevious
             // 
             this.btnPrevious.BackColor = System.Drawing.Color.Aqua;
-            this.btnPrevious.Location = new System.Drawing.Point(236, 283);
+            this.btnPrevious.Location = new System.Drawing.Point(131, 3);
             this.btnPrevious.Name = "btnPrevious";
-            this.btnPrevious.Size = new System.Drawing.Size(55, 47);
+            this.btnPrevious.Size = new System.Drawing.Size(61, 53);
             this.btnPrevious.TabIndex = 75;
             this.btnPrevious.Text = "Prev-\r\nious";
             this.btnPrevious.UseVisualStyleBackColor = false;
@@ -273,9 +280,9 @@
             // 
             this.btnNext.BackColor = System.Drawing.Color.Aqua;
             this.btnNext.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnNext.Location = new System.Drawing.Point(175, 283);
+            this.btnNext.Location = new System.Drawing.Point(70, 3);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(55, 47);
+            this.btnNext.Size = new System.Drawing.Size(61, 53);
             this.btnNext.TabIndex = 74;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = false;
@@ -283,9 +290,9 @@
             // btnMode
             // 
             this.btnMode.BackColor = System.Drawing.Color.Aqua;
-            this.btnMode.Location = new System.Drawing.Point(114, 283);
+            this.btnMode.Location = new System.Drawing.Point(9, 3);
             this.btnMode.Name = "btnMode";
-            this.btnMode.Size = new System.Drawing.Size(55, 47);
+            this.btnMode.Size = new System.Drawing.Size(61, 53);
             this.btnMode.TabIndex = 73;
             this.btnMode.Text = "Mode";
             this.btnMode.UseVisualStyleBackColor = false;
@@ -293,29 +300,30 @@
             // 
             // rtxtBuilder
             // 
-            this.rtxtBuilder.Location = new System.Drawing.Point(114, 251);
+            this.rtxtBuilder.Location = new System.Drawing.Point(9, 4);
             this.rtxtBuilder.Name = "rtxtBuilder";
-            this.rtxtBuilder.Size = new System.Drawing.Size(177, 23);
+            this.rtxtBuilder.Size = new System.Drawing.Size(177, 20);
             this.rtxtBuilder.TabIndex = 72;
             this.rtxtBuilder.Text = "";
             // 
             // txtNotepad
             // 
-            this.txtNotepad.Location = new System.Drawing.Point(32, 42);
+            this.txtNotepad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNotepad.Location = new System.Drawing.Point(12, 9);
             this.txtNotepad.Multiline = true;
             this.txtNotepad.Name = "txtNotepad";
             this.txtNotepad.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNotepad.Size = new System.Drawing.Size(410, 194);
+            this.txtNotepad.Size = new System.Drawing.Size(663, 194);
             this.txtNotepad.TabIndex = 71;
             this.txtNotepad.TextChanged += new System.EventHandler(this.txtNotepad_TextChanged);
             // 
             // txtCharChosen
             // 
-            this.txtCharChosen.Location = new System.Drawing.Point(407, 389);
+            this.txtCharChosen.Location = new System.Drawing.Point(509, 387);
             this.txtCharChosen.Name = "txtCharChosen";
-            this.txtCharChosen.Size = new System.Drawing.Size(100, 20);
+            this.txtCharChosen.Size = new System.Drawing.Size(106, 20);
             this.txtCharChosen.TabIndex = 106;
-
+            this.txtCharChosen.Visible = false;
             // 
             // timer1
             // 
@@ -324,12 +332,13 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Silver;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.configureToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(736, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(692, 24);
             this.menuStrip1.TabIndex = 107;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -414,35 +423,67 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files(*.*)|*.*";
             // 
-            // Form_MainWindow
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.btnMode);
+            this.panel1.Controls.Add(this.btnNext);
+            this.panel1.Controls.Add(this.btnPrevious);
+            this.panel1.Controls.Add(this.btnEmpty1);
+            this.panel1.Controls.Add(this.btn9);
+            this.panel1.Controls.Add(this.btnAsterix);
+            this.panel1.Controls.Add(this.btn8);
+            this.panel1.Controls.Add(this.btn000);
+            this.panel1.Controls.Add(this.btn7);
+            this.panel1.Controls.Add(this.btnHash);
+            this.panel1.Controls.Add(this.btn6);
+            this.panel1.Controls.Add(this.btn5);
+            this.panel1.Controls.Add(this.btnEnter);
+            this.panel1.Controls.Add(this.btn4);
+            this.panel1.Controls.Add(this.btnEmpty2);
+            this.panel1.Controls.Add(this.btn3);
+            this.panel1.Controls.Add(this.btnSendPredicted);
+            this.panel1.Controls.Add(this.btn2);
+            this.panel1.Controls.Add(this.btn1);
+            this.panel1.Location = new System.Drawing.Point(209, 290);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(263, 274);
+            this.panel1.TabIndex = 108;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.Controls.Add(this.txtStatus);
+            this.panel2.Controls.Add(this.rtxtBuilder);
+            this.panel2.Location = new System.Drawing.Point(209, 254);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(263, 30);
+            this.panel2.TabIndex = 109;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.txtNotepad);
+            this.panel3.Location = new System.Drawing.Point(0, 33);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(687, 215);
+            this.panel3.TabIndex = 110;
+            // 
+            // FormMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 665);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(692, 587);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCharChosen);
             this.Controls.Add(this.lstMode);
-            this.Controls.Add(this.btnEmpty1);
-            this.Controls.Add(this.btnAsterix);
-            this.Controls.Add(this.btn000);
-            this.Controls.Add(this.btnHash);
-            this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.btnEnter);
-            this.Controls.Add(this.btnEmpty2);
-            this.Controls.Add(this.btnSendPredicted);
-            this.Controls.Add(this.btn1);
-            this.Controls.Add(this.btn2);
-            this.Controls.Add(this.btn3);
-            this.Controls.Add(this.btn4);
-            this.Controls.Add(this.btn5);
-            this.Controls.Add(this.btn6);
-            this.Controls.Add(this.btn7);
-            this.Controls.Add(this.btn8);
-            this.Controls.Add(this.btn9);
-            this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.btnMode);
-            this.Controls.Add(this.rtxtBuilder);
-            this.Controls.Add(this.txtNotepad);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMainWindow";
@@ -451,6 +492,11 @@
             this.Load += new System.EventHandler(this.Form_MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,6 +542,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
 
     }
 }
