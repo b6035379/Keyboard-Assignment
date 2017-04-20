@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MyDialogs;
 
 
 namespace Keyboard_Assignment
@@ -616,7 +617,8 @@ namespace Keyboard_Assignment
 
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' you require. 1000 is equal to a 1 second delay. At present, the 'Delay Value' is set to " + intIntervalRequired + "."));
+            timer1.Interval = intIntervalRequired;
         }
     }
 }
