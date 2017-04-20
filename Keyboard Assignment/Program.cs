@@ -16,7 +16,7 @@ namespace Keyboard_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_MainWindow());
+            Application.Run(new FormMainWindow());
         }
     }
 }

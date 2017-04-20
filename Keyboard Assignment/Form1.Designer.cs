@@ -1,6 +1,6 @@
 ﻿namespace Keyboard_Assignment
 {
-    partial class Form_MainWindow
+    partial class FormMainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -445,7 +445,7 @@
             this.Controls.Add(this.txtNotepad);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form_MainWindow";
+            this.Name = "FormMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Keyboard Application";
             this.Load += new System.EventHandler(this.Form_MainWindow_Load);

@@ -13,20 +13,20 @@ using MyDialogs;
 
 namespace Keyboard_Assignment
 {
-    public partial class Form_MainWindow : Form
+    public partial class FormMainWindow : Form
     {
 
         // Flags changes made and thus file needs saving 
-        bool booleanRequiresSaving = false;
+        bool _booleanRequiresSaving;
 
         // The path to the file
-        string strPresentFilePathName = "";
+        string _strPresentFilePathName = "";
 
         // Timing Functionality
-        bool boolFirstVisit = true;
-        int intIntervalRequired = 500;
+        bool _boolFirstVisit = true;
+        int _intIntervalRequired = 500;
 
-        string strCurrentFileName = ""; //instance variable
+        string _strCurrentFileName = ""; //instance variable
 
         //Character Buttons Array
         string[] button1Array = { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
@@ -46,23 +46,23 @@ namespace Keyboard_Assignment
         bool[] boolButtonPresssed = new bool[18];
 
         // Prediction.
-        string Str_KeyStrokes;
+        string _strKeyStrokes;
 
         // Is the line from the list that has the highest useage
-        int intPredictedIndex;
-        int intNumberOfCharacters;
-        int intPredictedLength;
-        int intTimesClicked = -1;
+        int _intPredictedIndex;
+        int _intNumberOfCharacters;
+        int _intPredictedLength;
+        int _intTimesClicked = -1;
 
 
-        string strCharChosen;
+        string _strCharChosen;
 
-        string Mode;
+        string _mode;
         string MultiPress = "Multi-Press";
         string Prediction = "Prediction";
 
 
-        public Form_MainWindow()
+        public FormMainWindow()
         {
             InitializeComponent();
         }
@@ -70,21 +70,21 @@ namespace Keyboard_Assignment
         private void ModeMultiPress()
         {
             txtStatus.Clear();
-            Mode = MultiPress;
+            _mode = MultiPress;
             txtStatus.Text = "Multi-Press";
         }
 
         private void ModePrediction()
         {
             txtStatus.Clear();
-            Mode = Prediction;
+            _mode = Prediction;
             txtStatus.Text = "Prediction";
         }
 
 
         private void btnMode_Click(object sender, EventArgs e)
         {
-            if (Mode == Prediction)
+            if (_mode == Prediction)
             {
                 ModeMultiPress(); //Calls Multi-Press Class
             }
@@ -97,7 +97,7 @@ namespace Keyboard_Assignment
         private void Form_MainWindow_Load(object sender, EventArgs e)
         {
             ModeMultiPress();
-            timer1.Interval = intIntervalRequired;
+            timer1.Interval = _intIntervalRequired;
         }
 
 
@@ -105,18 +105,18 @@ namespace Keyboard_Assignment
         {
             //On tick (timer elapsed), enter the letter selected in the array
             timer1.Enabled = false;
-            boolFirstVisit = true;
-            intTimesClicked = -1;
+            _boolFirstVisit = true;
+            _intTimesClicked = -1;
 
-            for (int ArrayNumber = 0; ArrayNumber < boolButtonPresssed.Length; ArrayNumber++)
+            for (int arrayNumber = 0; arrayNumber < boolButtonPresssed.Length; arrayNumber++)
             {
-                boolButtonPresssed[ArrayNumber] = false;
+                boolButtonPresssed[arrayNumber] = false;
             }
         }
 
         private void txtNotepad_TextChanged(object sender, EventArgs e)
         {
-            booleanRequiresSaving = true;
+            _booleanRequiresSaving = true;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -127,7 +127,7 @@ namespace Keyboard_Assignment
         private void btn000_Click(object sender, EventArgs e)
         {
             txtNotepad.AppendText(rtxtBuilder.Text + " ");
-            Str_KeyStrokes = string.Empty;
+            _strKeyStrokes = string.Empty;
             rtxtBuilder.Clear();
         }
 
@@ -146,27 +146,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button1Array.Length)
+                if (_intTimesClicked < button1Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button1Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button1Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button1Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button1Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "1";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "1";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
 
@@ -187,27 +187,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button2Array.Length)
+                if (_intTimesClicked < button2Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button2Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button2Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button2Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button2Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "2";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "2";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -228,27 +228,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button3Array.Length)
+                if (_intTimesClicked < button3Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button3Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button3Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button3Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button3Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "3";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "3";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -267,27 +267,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button4Array.Length)
+                if (_intTimesClicked < button4Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button4Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button4Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button4Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button4Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "4";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "4";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -307,27 +307,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button5Array.Length)
+                if (_intTimesClicked < button5Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button5Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button5Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button5Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button5Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "5";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "5";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -348,27 +348,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button6Array.Length)
+                if (_intTimesClicked < button6Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button6Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button6Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button6Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button6Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "6";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "6";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -389,27 +389,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button7Array.Length)
+                if (_intTimesClicked < button7Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button7Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button7Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button7Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button7Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "7";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "7";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -429,27 +429,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button8Array.Length)
+                if (_intTimesClicked < button8Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button8Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button8Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button8Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button8Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "8";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "8";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -470,27 +470,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < button9Array.Length)
+                if (_intTimesClicked < button9Array.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % button9Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (button9Array[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % button9Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (button9Array[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "9";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "9";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -511,27 +511,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < buttonAsterixArray.Length)
+                if (_intTimesClicked < buttonAsterixArray.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % buttonAsterixArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (buttonAsterixArray[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % buttonAsterixArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (buttonAsterixArray[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "*";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "*";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -552,27 +552,27 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (intTimesClicked < buttonHashArray.Length)
+                if (_intTimesClicked < buttonHashArray.Length)
                 {
-                    intTimesClicked = (intTimesClicked + 1) % buttonHashArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    strCharChosen = (buttonHashArray[intTimesClicked]); //set variable as the character selected at the current element.
+                    _intTimesClicked = (_intTimesClicked + 1) % buttonHashArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    _strCharChosen = (buttonHashArray[_intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
-                    intTimesClicked = -1;
+                    _intTimesClicked = -1;
                 }
                 //if its the first time the button has been pressed during this timer, add the chosen character.
-                if (boolFirstVisit == true)
+                if (_boolFirstVisit == true)
                 {
-                    Str_KeyStrokes = Str_KeyStrokes + "#";
-                    txtCharChosen.Text = Str_KeyStrokes;
-                    rtxtBuilder.AppendText(strCharChosen);
-                    boolFirstVisit = false;
+                    _strKeyStrokes = _strKeyStrokes + "#";
+                    txtCharChosen.Text = _strKeyStrokes;
+                    rtxtBuilder.AppendText(_strCharChosen);
+                    _boolFirstVisit = false;
                 }
                 else//if the button is pressed again, remove the previous character, and add the new character.
                 {
                     rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                    rtxtBuilder.AppendText(strCharChosen);
+                    rtxtBuilder.AppendText(_strCharChosen);
                 }
             }
         }
@@ -580,31 +580,28 @@ namespace Keyboard_Assignment
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (strPresentFilePathName != "" && booleanRequiresSaving == true)
+            if (_strPresentFilePathName != "" && _booleanRequiresSaving == true)
             {
                 saveToolStripMenuItem_Click(sender, e);
             }
 
-            else if (strPresentFilePathName == "" && booleanRequiresSaving == true)
+            else if (_strPresentFilePathName == "" && _booleanRequiresSaving)
             {
                 saveAsToolStripMenuItem_Click(sender, e);
             }
 
-            else if (booleanRequiresSaving == false)
+            else if (_booleanRequiresSaving == false)
             {
-                strPresentFilePathName = "";
-                strCurrentFileName = "";
+                _strCurrentFileName = "";
                 txtNotepad.Clear();
-                booleanRequiresSaving = false;
-                //This gets us the location where the Application is being
-                // executed from and this a place where we can create files
-                string applicationPath = Directory.GetCurrentDirectory() + "\\";
+                _booleanRequiresSaving = false;
+                _strPresentFilePathName = Directory.GetCurrentDirectory() + "\\";
             }
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (strCurrentFileName == "")
+            if (_strCurrentFileName == "")
             {
                 // This redirect it to the Save As function
                 saveAsToolStripMenuItem_Click(sender, e);
@@ -613,21 +610,21 @@ namespace Keyboard_Assignment
             {
                 StreamWriter outputStream = File.CreateText(openFileDialog1.FileName);
                 outputStream.Write(txtNotepad.Text);
-                booleanRequiresSaving = false;
-                strPresentFilePathName = Directory.GetCurrentDirectory() + strCurrentFileName;
+                _booleanRequiresSaving = false;
+                _strPresentFilePathName = Directory.GetCurrentDirectory() + _strCurrentFileName;
                 outputStream.Close();
             }
         }
 
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' you require. 1000 is equal to a 1 second delay. At present, the 'Delay Value' is set to " + intIntervalRequired + "."));
-            timer1.Interval = intIntervalRequired;
+            _intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' you require. 1000 is equal to a 1 second delay. At present, the 'Delay Value' is set to " + _intIntervalRequired + "."));
+            timer1.Interval = _intIntervalRequired;
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (strCurrentFileName == "")
+            if (_strCurrentFileName == "")
             {
                 saveFileDialog1.InitialDirectory = "C:\\";
 
@@ -635,21 +632,21 @@ namespace Keyboard_Assignment
                 {
                     StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
                     outputStream.Write(txtNotepad.Text);
-                    strCurrentFileName = saveFileDialog1.FileName;
+                    _strCurrentFileName = saveFileDialog1.FileName;
                     outputStream.Close();
                 }
-                booleanRequiresSaving = false;
+                _booleanRequiresSaving = false;
             }
             else
             {
                 saveToolStripMenuItem_Click(sender, e);
-                booleanRequiresSaving = false;
+                _booleanRequiresSaving = false;
             }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (booleanRequiresSaving == true)
+            if (_booleanRequiresSaving == true)
             {
                 saveToolStripMenuItem_Click(sender, e);
             }
@@ -661,9 +658,9 @@ namespace Keyboard_Assignment
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (strCurrentFileName == "")
+            if (_strCurrentFileName == "")
             {
-                if (booleanRequiresSaving == true)
+                if (_booleanRequiresSaving == true)
                 {
                     saveToolStripMenuItem_Click(sender, e);
                 }
@@ -674,9 +671,9 @@ namespace Keyboard_Assignment
                 {
                     StreamReader inputStream = File.OpenText(openFileDialog1.FileName);
                     txtNotepad.Text = inputStream.ReadToEnd();
-                    strCurrentFileName = openFileDialog1.FileName;
-                    strPresentFilePathName = Directory.GetCurrentDirectory() + strCurrentFileName;
-                    booleanRequiresSaving = false;
+                    _strCurrentFileName = openFileDialog1.FileName;
+                    _strPresentFilePathName = Directory.GetCurrentDirectory() + _strCurrentFileName;
+                    _booleanRequiresSaving = false;
                     inputStream.Close();
                 }
             }
