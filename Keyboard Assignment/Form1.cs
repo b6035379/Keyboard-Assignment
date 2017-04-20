@@ -86,27 +86,6 @@ namespace Keyboard_Assignment
             txtStatus.Text = "Prediction";
         }
 
-        /*private void ButtonClicked()
-        {
-            timer1.Enabled = false;
-            timer1.Enabled = true;
-            intTimesClicked = intTimesClicked + 1;
-            Index = -1 + intTimesClicked;
-        }*/
-
-        /* private void CycleThrough()
-         {
-             if (Index < 6)
-             {
-                 ButtonClicked();
-             }
-             else
-             {
-                 Reset();
-                 ButtonClicked();
-             }
-         }*/
-
 
         private void btnMode_Click(object sender, EventArgs e)
         {
