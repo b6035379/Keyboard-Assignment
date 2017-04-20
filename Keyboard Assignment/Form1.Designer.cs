@@ -315,7 +315,7 @@
             this.txtCharChosen.Name = "txtCharChosen";
             this.txtCharChosen.Size = new System.Drawing.Size(100, 20);
             this.txtCharChosen.TabIndex = 106;
-            this.txtCharChosen.TextChanged += new System.EventHandler(this.txtCharChosen_TextChanged);
+
             // 
             // timer1
             // 
