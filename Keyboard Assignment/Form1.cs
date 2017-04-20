@@ -19,6 +19,10 @@ namespace Keyboard_Assignment
         // Flags changes made and thus file needs saving 
         bool booleanRequiresSaving = false;
 
+
+        // The path to the file
+        string strPresentFilePathName = "";
+
         // Timing Functionality
         bool boolFirstVisit = true;
         int intIntervalRequired = 500;
@@ -138,7 +142,7 @@ namespace Keyboard_Assignment
 
         private void txtNotepad_TextChanged(object sender, EventArgs e)
         {
-
+           booleanRequiresSaving = true;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -606,10 +610,31 @@ namespace Keyboard_Assignment
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            if (strPresentFilePathName != "" && booleanRequiresSaving == true)
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
+            
+            else if (strPresentFilePathName =="" && booleanRequiresSaving == true)
+            {
+                saveAsToolStripMenuItem_Click(sender, e);
+            }
+
+            else if (booleanRequiresSaving == false)
+            {
+                strPresentFilePathName = "";
+                strCurrentFileName = "";
+                txtNotepad.Clear();
+                booleanRequiresSaving = false;
+                //This gets us the location where the Application is being
+                // executed from and this a place where we can create files
+                string applicationPath = Directory.GetCurrentDirectory() + "\\";
+
+
+            }
             /*
-            //This gets us the location where the Application is being
-            // executed from and this a place where we can create files
-            string applicationPath = Directory.GetCurrentDirectory() + "\\";
+            
 
             //Creates a file on the HDD at the applicationPath location called, "MyFile.txt"
             StreamWriter myOutputStream = File.CreateText(applicationPath + ".txt");
@@ -630,6 +655,8 @@ namespace Keyboard_Assignment
             {
                 StreamWriter outputStream = File.CreateText(openFileDialog1.FileName);
                 outputStream.Write(txtNotepad.Text);
+                booleanRequiresSaving = false;
+                strPresentFilePathName = Directory.GetCurrentDirectory() + strCurrentFileName;
                 outputStream.Close();
             }
         }
@@ -653,10 +680,12 @@ namespace Keyboard_Assignment
                     strCurrentFileName = saveFileDialog1.FileName;
                     outputStream.Close();
                 }
+                booleanRequiresSaving = false;
             }
             else
             {
                 saveToolStripMenuItem_Click(sender, e);
+                booleanRequiresSaving = false;
             }
         }
 
@@ -671,7 +700,7 @@ namespace Keyboard_Assignment
             
             if (strCurrentFileName == "")
             {
-                if (txtNotepad.Text != "")
+                if (booleanRequiresSaving == true)
                 {
                     saveToolStripMenuItem_Click(sender, e);
                 } 
@@ -683,6 +712,8 @@ namespace Keyboard_Assignment
                     StreamReader inputStream = File.OpenText(openFileDialog1.FileName);
                     txtNotepad.Text = inputStream.ReadToEnd();
                     strCurrentFileName = openFileDialog1.FileName;
+                    strPresentFilePathName = Directory.GetCurrentDirectory() + strCurrentFileName;
+                    booleanRequiresSaving = false;
                     inputStream.Close();
                 }
             }
