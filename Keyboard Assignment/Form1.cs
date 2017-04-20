@@ -19,9 +19,6 @@ namespace Keyboard_Assignment
         // Flags changes made and thus file needs saving 
         bool booleanRequiresSaving = false;
 
-        // The Path to the 'Dictionary'
-        string strPresentFilePathName = "";
-
         // Timing Functionality
         bool boolFirstVisit = true;
         int intIntervalRequired = 500;
@@ -670,8 +667,15 @@ namespace Keyboard_Assignment
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
+            
             if (strCurrentFileName == "")
             {
+                if (txtNotepad.Text != "")
+                {
+                    saveToolStripMenuItem_Click(sender, e);
+                } 
+                
                 openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\";
 
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -685,6 +689,7 @@ namespace Keyboard_Assignment
             else
             {
                 // ask user if they wish to save the current file
+                saveToolStripMenuItem_Click(sender, e);
             }
         }
     }
