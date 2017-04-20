@@ -14,6 +14,7 @@ namespace Keyboard_Assignment
 {
     public partial class Form_MainWindow : Form
     {
+
         // Flags changes made and thus file needs saving 
         bool booleanRequiresSaving = false;
 
@@ -118,7 +119,9 @@ namespace Keyboard_Assignment
         private void Form_MainWindow_Load(object sender, EventArgs e)
         {
             ModeMultiPress();
+            timer1.Interval = intIntervalRequired;
         }
+
 
         public void timer1_Tick(object sender, EventArgs e)
         {
@@ -177,6 +180,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "1";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -216,6 +221,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "2";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -255,6 +262,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "3";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -292,6 +301,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "4";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -330,6 +341,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "5";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -369,6 +382,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "6";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -408,6 +423,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "7";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -446,6 +463,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "8";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -485,6 +504,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "9";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -524,6 +545,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "*";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -563,6 +586,8 @@ namespace Keyboard_Assignment
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (boolFirstVisit == true)
                 {
+                    Str_KeyStrokes = Str_KeyStrokes + "#";
+                    txtCharChosen.Text = Str_KeyStrokes;
                     rtxtBuilder.AppendText(strCharChosen);
                     boolFirstVisit = false;
                 }
@@ -572,6 +597,26 @@ namespace Keyboard_Assignment
                     rtxtBuilder.AppendText(strCharChosen);
                 }
             }
+        }
+
+        private void txtCharChosen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void configureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
