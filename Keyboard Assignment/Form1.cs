@@ -19,7 +19,6 @@ namespace Keyboard_Assignment
         // Flags changes made and thus file needs saving 
         bool booleanRequiresSaving = false;
 
-
         // The path to the file
         string strPresentFilePathName = "";
 
@@ -27,11 +26,7 @@ namespace Keyboard_Assignment
         bool boolFirstVisit = true;
         int intIntervalRequired = 500;
 
-        // Global ListBox can be place on the Form instead of here. 
-        ListBox lstGlobalListbox = new ListBox();
-        int intMyListIndex = 0;
-
-         string strCurrentFileName = ""; //instance variable
+        string strCurrentFileName = ""; //instance variable
 
         //Character Buttons Array
         string[] button1Array = { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
@@ -59,7 +54,7 @@ namespace Keyboard_Assignment
         int intPredictedLength;
         int intTimesClicked = -1;
 
-        //
+
         string strCharChosen;
 
         string Mode;
@@ -121,7 +116,7 @@ namespace Keyboard_Assignment
 
         private void txtNotepad_TextChanged(object sender, EventArgs e)
         {
-           booleanRequiresSaving = true;
+            booleanRequiresSaving = true;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -589,13 +584,13 @@ namespace Keyboard_Assignment
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             if (strPresentFilePathName != "" && booleanRequiresSaving == true)
             {
                 saveToolStripMenuItem_Click(sender, e);
             }
-            
-            else if (strPresentFilePathName =="" && booleanRequiresSaving == true)
+
+            else if (strPresentFilePathName == "" && booleanRequiresSaving == true)
             {
                 saveAsToolStripMenuItem_Click(sender, e);
             }
@@ -609,18 +604,7 @@ namespace Keyboard_Assignment
                 //This gets us the location where the Application is being
                 // executed from and this a place where we can create files
                 string applicationPath = Directory.GetCurrentDirectory() + "\\";
-
-
             }
-            /*
-            
-
-            //Creates a file on the HDD at the applicationPath location called, "MyFile.txt"
-            StreamWriter myOutputStream = File.CreateText(applicationPath + ".txt");
-
-            //Close the file
-            myOutputStream.Close();
-             */
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -670,20 +654,25 @@ namespace Keyboard_Assignment
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            if (booleanRequiresSaving == true)
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                Close();
+            }
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
-            
             if (strCurrentFileName == "")
             {
                 if (booleanRequiresSaving == true)
                 {
                     saveToolStripMenuItem_Click(sender, e);
-                } 
-                
+                }
+
                 openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\";
 
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
