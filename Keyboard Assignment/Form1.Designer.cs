@@ -277,6 +277,7 @@
             this.btnAsterix.TabIndex = 91;
             this.btnAsterix.Text = "* - _";
             this.btnAsterix.UseVisualStyleBackColor = false;
+            this.btnAsterix.Click += new System.EventHandler(this.btnAsterix_Click);
             // 
             // btn000
             // 
@@ -298,6 +299,7 @@
             this.btnHash.TabIndex = 89;
             this.btnHash.Text = "#\r\n0 00";
             this.btnHash.UseVisualStyleBackColor = false;
+            this.btnHash.Click += new System.EventHandler(this.btnHash_Click);
             // 
             // txtStatus
             // 
@@ -486,7 +488,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // txtCharChosen
@@ -583,8 +585,8 @@
         private System.Windows.Forms.Button btnMode;
         private System.Windows.Forms.RichTextBox rtxtBuilder;
         private System.Windows.Forms.TextBox txtNotepad;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TextBox txtCharChosen;
+        private System.Windows.Forms.Timer timer1;
 
     }
 }
