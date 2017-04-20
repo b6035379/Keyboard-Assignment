@@ -631,7 +631,7 @@ namespace Keyboard_Assignment
             }
             else
             {
-                StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
+                StreamWriter outputStream = File.CreateText(openFileDialog1.FileName);
                 outputStream.Write(txtNotepad.Text);
                 outputStream.Close();
             }
@@ -670,6 +670,22 @@ namespace Keyboard_Assignment
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (strCurrentFileName == "")
+            {
+                openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\";
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamReader inputStream = File.OpenText(openFileDialog1.FileName);
+                    txtNotepad.Text = inputStream.ReadToEnd();
+                    strCurrentFileName = openFileDialog1.FileName;
+                    inputStream.Close();
+                }
+            }
+            else
+            {
+                // ask user if they wish to save the current file
+            }
         }
     }
 }
