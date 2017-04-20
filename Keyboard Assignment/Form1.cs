@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
+
 namespace Keyboard_Assignment
 {
     public partial class Form_MainWindow : Form
@@ -38,7 +39,7 @@ namespace Keyboard_Assignment
         string[] button8Array = { "a", "b", "c", "8", "A", "B", "C" };
         string[] button9Array = { "d", "e", "f", "9", "D", "E", "F" };
         string[] buttonHashArray = { "#", "-", "_" };
-        string[] buttonAsterixArray = { "#", "-", "_" };
+        string[] buttonAsterixArray = { "*", "-", "_" };
 
 
         // Buttons. Identifies which button is being selected be the user. 
@@ -88,18 +89,18 @@ namespace Keyboard_Assignment
             Index = -1 + intTimesClicked;
         }*/
 
-       /* private void CycleThrough()
-        {
-            if (Index < 6)
-            {
-                ButtonClicked();
-            }
-            else
-            {
-                Reset();
-                ButtonClicked();
-            }
-        }*/
+        /* private void CycleThrough()
+         {
+             if (Index < 6)
+             {
+                 ButtonClicked();
+             }
+             else
+             {
+                 Reset();
+                 ButtonClicked();
+             }
+         }*/
 
 
         private void btnMode_Click(object sender, EventArgs e)
@@ -119,19 +120,19 @@ namespace Keyboard_Assignment
             ModeMultiPress();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        public void timer1_Tick(object sender, EventArgs e)
         {
             //On tick (timer elapsed), enter the letter selected in the array
             timer1.Enabled = false;
             boolFirstVisit = true;
             intTimesClicked = -1;
 
-            boolButtonPresssed[1] = false;
-
-
+            for (int ArrayNumber = 0; ArrayNumber < boolButtonPresssed.Length; ArrayNumber++)
+            {
+                boolButtonPresssed[ArrayNumber] = false;
+            }
         }
 
-      
         private void txtNotepad_TextChanged(object sender, EventArgs e)
         {
 
@@ -152,376 +153,426 @@ namespace Keyboard_Assignment
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            // restart the timer
+            if (boolButtonPresssed[1] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
+            //restart the timer
             timer1.Enabled = false;
             timer1.Enabled = true;
             boolButtonPresssed[1] = true;
-            
-                if (timer1.Enabled == true) //start timer cycle
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button1Array.Length)
                 {
-                    if (intTimesClicked < button1Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button1Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button1Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
-                }     
-        }
-
-        private void btn2_Click(object sender, EventArgs e)
-        {
-            // restart the timer
-            timer1.Enabled = false;
-            timer1.Enabled = true;
-
-            if (boolButtonPresssed[2] == true)
-            {
-                if (timer1.Enabled == true) //start timer cycle
-                {
-                    if (intTimesClicked < button2Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button2Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button2Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
-                }
-            }
-            else
-            {
-                //tick the timer
-                boolButtonPresssed[2] = true;
-
-            }
-        }
-
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            timer1.Enabled = false;
-            timer1.Enabled = true;
-            if (boolFirstVisit == true)
-            {
-
-            }
-
-            if (timer1.Enabled == true)
-            {
-                if (intTimesClicked < button3Array.Length)
-                {
-                    intTimesClicked = (intTimesClicked + 1) % button3Array.Length;
-                    strCharChosen = button3Array[intTimesClicked];
+                    intTimesClicked = (intTimesClicked + 1) % button1Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button1Array[intTimesClicked]); //set variable as the character selected at the current element.
                 }
                 else
                 {
                     intTimesClicked = -1;
                 }
-            }
-            else
-            {
-
-                intTimesClicked = -1;
-                strCharChosen = button3Array[intTimesClicked];
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
+                }
             }
 
         }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            if (boolButtonPresssed[2] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
+
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[2] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button2Array.Length)
+                {
+                    intTimesClicked = (intTimesClicked + 1) % button2Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button2Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
+                }
+            }
+        }
+
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            if (boolButtonPresssed[3] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
+
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[3] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button3Array.Length)
+                {
+                    intTimesClicked = (intTimesClicked + 1) % button3Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button3Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
+                }
+            }
+        }
         private void btn4_Click(object sender, EventArgs e)
         {
-            
-                // restart the timer
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-                boolButtonPresssed[4] = true;
+            if (boolButtonPresssed[4] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                if (timer1.Enabled == true) //start timer cycle
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[4] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button4Array.Length)
                 {
-                    if (intTimesClicked < button4Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button4Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button4Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % button4Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button4Array[intTimesClicked]); //set variable as the character selected at the current element.
                 }
-           
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
+                }
+            }
         }
 
         private void btn5_Click(object sender, EventArgs e)
         {
-            
-                // restart the timer
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-                boolButtonPresssed[5] = true;
+            if (boolButtonPresssed[5] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                if (timer1.Enabled == true) //start timer cycle
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[5] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button5Array.Length)
                 {
-                    if (intTimesClicked < button5Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button5Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button5Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % button5Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button5Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
                 }
             }
-        
+        }
+
 
         private void btn6_Click(object sender, EventArgs e)
-        
-          {
-                // restart the timer
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-                boolButtonPresssed[6] = true;
+        {
+            if (boolButtonPresssed[6] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                if (timer1.Enabled == true) //start timer cycle
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[6] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button6Array.Length)
                 {
-                    if (intTimesClicked < button6Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button6Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button6Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % button6Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button6Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
                 }
             }
-        
+        }
+
 
         private void btn7_Click(object sender, EventArgs e)
-        
+        {
+            if (boolButtonPresssed[7] == false)
             {
-                // restart the timer
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-                boolButtonPresssed[7] = true;
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                if (timer1.Enabled == true) //start timer cycle
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[7] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button7Array.Length)
                 {
-                    if (intTimesClicked < button7Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button7Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button7Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % button7Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button7Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
                 }
             }
-        
-        
+        }
 
         private void btn8_Click(object sender, EventArgs e)
-
+        {
+            if (boolButtonPresssed[8] == false)
             {
-                // restart the timer
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-                boolButtonPresssed[8] = true;
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                if (timer1.Enabled == true) //start timer cycle
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[8] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button8Array.Length)
                 {
-                    if (intTimesClicked < button8Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button8Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button8Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % button8Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button8Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
                 }
             }
+        }
 
 
         private void btn9_Click(object sender, EventArgs e)
-
+        {
+            if (boolButtonPresssed[9] == false)
             {
-                // restart the timer
-                timer1.Enabled = false;
-                timer1.Enabled = true;
-                boolButtonPresssed[9] = true;
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                if (timer1.Enabled == true) //start timer cycle
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[9] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < button9Array.Length)
                 {
-                    if (intTimesClicked < button9Array.Length)
-                    {
-                        intTimesClicked = (intTimesClicked + 1) % button9Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                        strCharChosen = (button9Array[intTimesClicked]); //set variable as the character selected at the current element.
-                    }
-                    else
-                    {
-                        intTimesClicked = -1;
-                    }
-                    //if its the first time the button has been pressed during this timer, add the chosen character.
-                    if (boolFirstVisit == true)
-                    {
-                        rtxtBuilder.AppendText(strCharChosen);
-                        boolFirstVisit = false;
-                    }
-                    else//if the button is pressed again, remove the previous character, and add the new character.
-                    {
-                        rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                        rtxtBuilder.AppendText(strCharChosen);
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % button9Array.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (button9Array[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
                 }
             }
+        }
 
 
         private void btnAsterix_Click(object sender, EventArgs e)
+        {
+            if (boolButtonPresssed[11] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[11] = true;
+
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < buttonAsterixArray.Length)
                 {
-                    // restart the timer
-                    timer1.Enabled = false;
-                    timer1.Enabled = true;
-                    boolButtonPresssed[11] = true;
-
-                    if (timer1.Enabled == true) //start timer cycle
-                    {
-                        if (intTimesClicked < buttonAsterixArray.Length)
-                        {
-                            intTimesClicked = (intTimesClicked + 1) % buttonAsterixArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                            strCharChosen = (buttonAsterixArray[intTimesClicked]); //set variable as the character selected at the current element.
-                        }
-                        else
-                        {
-                            intTimesClicked = -1;
-                        }
-                        //if its the first time the button has been pressed during this timer, add the chosen character.
-                        if (boolFirstVisit == true)
-                        {
-                            rtxtBuilder.AppendText(strCharChosen);
-                            boolFirstVisit = false;
-                        }
-                        else//if the button is pressed again, remove the previous character, and add the new character.
-                        {
-                            rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                            rtxtBuilder.AppendText(strCharChosen);
-                        }
-                    }
+                    intTimesClicked = (intTimesClicked + 1) % buttonAsterixArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (buttonAsterixArray[intTimesClicked]); //set variable as the character selected at the current element.
                 }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
+                }
+            }
+        }
 
 
         private void btnHash_Click(object sender, EventArgs e)
+        {
+            if (boolButtonPresssed[12] == false)
+            {
+                timer1_Tick(null, null); //Force the timer to tick
+            }
 
-                    {
-                        // restart the timer
-                        timer1.Enabled = false;
-                        timer1.Enabled = true;
-                        boolButtonPresssed[12] = true;
+            //restart the timer
+            timer1.Enabled = false;
+            timer1.Enabled = true;
+            boolButtonPresssed[12] = true;
 
-                        if (timer1.Enabled == true) //start timer cycle
-                        {
-                            if (intTimesClicked < buttonAsterixArray.Length)
-                            {
-                                intTimesClicked = (intTimesClicked + 1) % buttonAsterixArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                                strCharChosen = (buttonAsterixArray[intTimesClicked]); //set variable as the character selected at the current element.
-                            }
-                            else
-                            {
-                                intTimesClicked = -1;
-                            }
-                            //if its the first time the button has been pressed during this timer, add the chosen character.
-                            if (boolFirstVisit == true)
-                            {
-                                rtxtBuilder.AppendText(strCharChosen);
-                                boolFirstVisit = false;
-                            }
-                            else//if the button is pressed again, remove the previous character, and add the new character.
-                            {
-                                rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
-                                rtxtBuilder.AppendText(strCharChosen);
-                            }
-                        }
-                    }
+
+            if (timer1.Enabled == true) //start timer cycle
+            {
+                if (intTimesClicked < buttonHashArray.Length)
+                {
+                    intTimesClicked = (intTimesClicked + 1) % buttonHashArray.Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                    strCharChosen = (buttonHashArray[intTimesClicked]); //set variable as the character selected at the current element.
+                }
+                else
+                {
+                    intTimesClicked = -1;
+                }
+                //if its the first time the button has been pressed during this timer, add the chosen character.
+                if (boolFirstVisit == true)
+                {
+                    rtxtBuilder.AppendText(strCharChosen);
+                    boolFirstVisit = false;
+                }
+                else//if the button is pressed again, remove the previous character, and add the new character.
+                {
+                    rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+                    rtxtBuilder.AppendText(strCharChosen);
                 }
             }
+        }
+    }
+}
 

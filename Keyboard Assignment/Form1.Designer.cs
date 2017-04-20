@@ -64,8 +64,8 @@
             this.btnMode = new System.Windows.Forms.Button();
             this.rtxtBuilder = new System.Windows.Forms.RichTextBox();
             this.txtNotepad = new System.Windows.Forms.TextBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.txtCharChosen = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lstMode
@@ -486,17 +486,17 @@
             this.txtNotepad.TabIndex = 71;
             this.txtNotepad.TextChanged += new System.EventHandler(this.txtNotepad_TextChanged);
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 500;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // txtCharChosen
             // 
             this.txtCharChosen.Location = new System.Drawing.Point(407, 389);
             this.txtCharChosen.Name = "txtCharChosen";
             this.txtCharChosen.Size = new System.Drawing.Size(100, 20);
             this.txtCharChosen.TabIndex = 106;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form_MainWindow
             // 
