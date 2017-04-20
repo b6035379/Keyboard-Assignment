@@ -30,18 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lstMode = new System.Windows.Forms.ListBox();
-            this.lstHash = new System.Windows.Forms.ListBox();
-            this.lst0 = new System.Windows.Forms.ListBox();
-            this.lstAsterix = new System.Windows.Forms.ListBox();
-            this.lst3 = new System.Windows.Forms.ListBox();
-            this.lst2 = new System.Windows.Forms.ListBox();
-            this.lst1 = new System.Windows.Forms.ListBox();
-            this.lst6 = new System.Windows.Forms.ListBox();
-            this.lst5 = new System.Windows.Forms.ListBox();
-            this.lst4 = new System.Windows.Forms.ListBox();
-            this.lst9 = new System.Windows.Forms.ListBox();
-            this.lst8 = new System.Windows.Forms.ListBox();
-            this.lst7 = new System.Windows.Forms.ListBox();
             this.btnEmpty1 = new System.Windows.Forms.Button();
             this.btnAsterix = new System.Windows.Forms.Button();
             this.btn000 = new System.Windows.Forms.Button();
@@ -68,15 +56,17 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,186 +80,6 @@
             this.lstMode.Name = "lstMode";
             this.lstMode.Size = new System.Drawing.Size(58, 69);
             this.lstMode.TabIndex = 105;
-            // 
-            // lstHash
-            // 
-            this.lstHash.FormattingEnabled = true;
-            this.lstHash.Location = new System.Drawing.Point(610, 347);
-            this.lstHash.Name = "lstHash";
-            this.lstHash.Size = new System.Drawing.Size(21, 56);
-            this.lstHash.TabIndex = 104;
-            // 
-            // lst0
-            // 
-            this.lst0.FormattingEnabled = true;
-            this.lst0.Items.AddRange(new object[] {
-            "#",
-            "0",
-            " "});
-            this.lst0.Location = new System.Drawing.Point(585, 347);
-            this.lst0.Name = "lst0";
-            this.lst0.Size = new System.Drawing.Size(19, 56);
-            this.lst0.TabIndex = 103;
-            // 
-            // lstAsterix
-            // 
-            this.lstAsterix.FormattingEnabled = true;
-            this.lstAsterix.Items.AddRange(new object[] {
-            "*",
-            "-",
-            "_"});
-            this.lstAsterix.Location = new System.Drawing.Point(562, 347);
-            this.lstAsterix.Name = "lstAsterix";
-            this.lstAsterix.Size = new System.Drawing.Size(17, 56);
-            this.lstAsterix.TabIndex = 102;
-            // 
-            // lst3
-            // 
-            this.lst3.FormattingEnabled = true;
-            this.lst3.Items.AddRange(new object[] {
-            "w",
-            "x",
-            "y",
-            "z",
-            "3",
-            "W",
-            "X",
-            "Y",
-            "Z"});
-            this.lst3.Location = new System.Drawing.Point(610, 220);
-            this.lst3.Name = "lst3";
-            this.lst3.Size = new System.Drawing.Size(21, 121);
-            this.lst3.TabIndex = 101;
-            // 
-            // lst2
-            // 
-            this.lst2.FormattingEnabled = true;
-            this.lst2.Items.AddRange(new object[] {
-            "t",
-            "u",
-            "v",
-            "2",
-            "T",
-            "U",
-            "V"});
-            this.lst2.Location = new System.Drawing.Point(585, 220);
-            this.lst2.Name = "lst2";
-            this.lst2.Size = new System.Drawing.Size(19, 121);
-            this.lst2.TabIndex = 100;
-            // 
-            // lst1
-            // 
-            this.lst1.FormattingEnabled = true;
-            this.lst1.Items.AddRange(new object[] {
-            "p",
-            "q",
-            "r",
-            "s",
-            "1",
-            "P",
-            "Q",
-            "R",
-            "S"});
-            this.lst1.Location = new System.Drawing.Point(562, 220);
-            this.lst1.Name = "lst1";
-            this.lst1.Size = new System.Drawing.Size(17, 121);
-            this.lst1.TabIndex = 99;
-            // 
-            // lst6
-            // 
-            this.lst6.FormattingEnabled = true;
-            this.lst6.Items.AddRange(new object[] {
-            "m",
-            "n",
-            "o",
-            "6",
-            "M",
-            "N",
-            "O"});
-            this.lst6.Location = new System.Drawing.Point(610, 119);
-            this.lst6.Name = "lst6";
-            this.lst6.Size = new System.Drawing.Size(21, 95);
-            this.lst6.TabIndex = 98;
-            // 
-            // lst5
-            // 
-            this.lst5.FormattingEnabled = true;
-            this.lst5.Items.AddRange(new object[] {
-            "j",
-            "k",
-            "l",
-            "5",
-            "J",
-            "K",
-            "L"});
-            this.lst5.Location = new System.Drawing.Point(585, 119);
-            this.lst5.Name = "lst5";
-            this.lst5.Size = new System.Drawing.Size(19, 95);
-            this.lst5.TabIndex = 97;
-            // 
-            // lst4
-            // 
-            this.lst4.FormattingEnabled = true;
-            this.lst4.Items.AddRange(new object[] {
-            "g",
-            "h",
-            "i",
-            "4",
-            "G",
-            "H",
-            "I"});
-            this.lst4.Location = new System.Drawing.Point(562, 119);
-            this.lst4.Name = "lst4";
-            this.lst4.Size = new System.Drawing.Size(17, 95);
-            this.lst4.TabIndex = 96;
-            // 
-            // lst9
-            // 
-            this.lst9.FormattingEnabled = true;
-            this.lst9.Items.AddRange(new object[] {
-            "d",
-            "e",
-            "f",
-            "9",
-            "D",
-            "E",
-            "F"});
-            this.lst9.Location = new System.Drawing.Point(610, 18);
-            this.lst9.Name = "lst9";
-            this.lst9.Size = new System.Drawing.Size(21, 95);
-            this.lst9.TabIndex = 95;
-            // 
-            // lst8
-            // 
-            this.lst8.FormattingEnabled = true;
-            this.lst8.Items.AddRange(new object[] {
-            "a",
-            "b",
-            "c",
-            "8",
-            "A",
-            "B",
-            "C"});
-            this.lst8.Location = new System.Drawing.Point(585, 18);
-            this.lst8.Name = "lst8";
-            this.lst8.Size = new System.Drawing.Size(19, 95);
-            this.lst8.TabIndex = 94;
-            // 
-            // lst7
-            // 
-            this.lst7.FormattingEnabled = true;
-            this.lst7.Items.AddRange(new object[] {
-            ".",
-            ",",
-            "\"",
-            "7",
-            "\'",
-            ":",
-            ";"});
-            this.lst7.Location = new System.Drawing.Point(562, 18);
-            this.lst7.Name = "lst7";
-            this.lst7.Size = new System.Drawing.Size(17, 95);
-            this.lst7.TabIndex = 93;
             // 
             // btnEmpty1
             // 
@@ -494,6 +304,7 @@
             this.txtNotepad.Location = new System.Drawing.Point(32, 42);
             this.txtNotepad.Multiline = true;
             this.txtNotepad.Name = "txtNotepad";
+            this.txtNotepad.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtNotepad.Size = new System.Drawing.Size(410, 194);
             this.txtNotepad.TabIndex = 71;
             this.txtNotepad.TextChanged += new System.EventHandler(this.txtNotepad_TextChanged);
@@ -537,6 +348,56 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
+            // newToolStripMenuItem
+            // 
+            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.newToolStripMenuItem.Text = "&New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.openToolStripMenuItem.Text = "&Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(111, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.saveAsToolStripMenuItem.Text = "Save &As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(111, 6);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // configureToolStripMenuItem
             // 
             this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
@@ -544,52 +405,14 @@
             this.configureToolStripMenuItem.Text = "&Configure";
             this.configureToolStripMenuItem.Click += new System.EventHandler(this.configureToolStripMenuItem_Click);
             // 
-            // newToolStripMenuItem
+            // saveFileDialog1
             // 
-            this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newToolStripMenuItem.Text = "&New";
-            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
+            this.saveFileDialog1.Filter = "txt files (*.txt)|*.txt|All files(*.*)|*.*";
             // 
-            // openToolStripMenuItem
+            // openFileDialog1
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.openToolStripMenuItem.Text = "&Open";
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveAsToolStripMenuItem.Text = "Save &As";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files(*.*)|*.*";
             // 
             // Form_MainWindow
             // 
@@ -598,18 +421,6 @@
             this.ClientSize = new System.Drawing.Size(736, 665);
             this.Controls.Add(this.txtCharChosen);
             this.Controls.Add(this.lstMode);
-            this.Controls.Add(this.lstHash);
-            this.Controls.Add(this.lst0);
-            this.Controls.Add(this.lstAsterix);
-            this.Controls.Add(this.lst3);
-            this.Controls.Add(this.lst2);
-            this.Controls.Add(this.lst1);
-            this.Controls.Add(this.lst6);
-            this.Controls.Add(this.lst5);
-            this.Controls.Add(this.lst4);
-            this.Controls.Add(this.lst9);
-            this.Controls.Add(this.lst8);
-            this.Controls.Add(this.lst7);
             this.Controls.Add(this.btnEmpty1);
             this.Controls.Add(this.btnAsterix);
             this.Controls.Add(this.btn000);
@@ -648,18 +459,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox lstMode;
-        private System.Windows.Forms.ListBox lstHash;
-        private System.Windows.Forms.ListBox lst0;
-        private System.Windows.Forms.ListBox lstAsterix;
-        private System.Windows.Forms.ListBox lst3;
-        private System.Windows.Forms.ListBox lst2;
-        private System.Windows.Forms.ListBox lst1;
-        private System.Windows.Forms.ListBox lst6;
-        private System.Windows.Forms.ListBox lst5;
-        private System.Windows.Forms.ListBox lst4;
-        private System.Windows.Forms.ListBox lst9;
-        private System.Windows.Forms.ListBox lst8;
-        private System.Windows.Forms.ListBox lst7;
         private System.Windows.Forms.Button btnEmpty1;
         private System.Windows.Forms.Button btnAsterix;
         private System.Windows.Forms.Button btn000;
@@ -695,6 +494,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
 
     }
 }

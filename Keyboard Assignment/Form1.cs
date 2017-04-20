@@ -30,6 +30,8 @@ namespace Keyboard_Assignment
         ListBox lstGlobalListbox = new ListBox();
         int intMyListIndex = 0;
 
+         string strCurrentFileName = ""; //instance variable
+
         //Character Buttons Array
         string[] button1Array = { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
         string[] button2Array = { "t", "u", "v", "2", "T", "U", "V" };
@@ -607,18 +609,67 @@ namespace Keyboard_Assignment
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            /*
+            //This gets us the location where the Application is being
+            // executed from and this a place where we can create files
+            string applicationPath = Directory.GetCurrentDirectory() + "\\";
 
+            //Creates a file on the HDD at the applicationPath location called, "MyFile.txt"
+            StreamWriter myOutputStream = File.CreateText(applicationPath + ".txt");
+
+            //Close the file
+            myOutputStream.Close();
+             */
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (strCurrentFileName == "")
+            {
+                // This redirect it to the Save As function
+                saveAsToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
+                outputStream.Write(txtNotepad.Text);
+                outputStream.Close();
+            }
         }
 
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             intIntervalRequired = Convert.ToInt32(My_Dialogs.InputBox("Please enter the 'Delay Value' you require. 1000 is equal to a 1 second delay. At present, the 'Delay Value' is set to " + intIntervalRequired + "."));
             timer1.Interval = intIntervalRequired;
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (strCurrentFileName == "")
+            {
+                saveFileDialog1.InitialDirectory = "C:\\";
+
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
+                    outputStream.Write(txtNotepad.Text);
+                    strCurrentFileName = saveFileDialog1.FileName;
+                    outputStream.Close();
+                }
+            }
+            else
+            {
+                saveToolStripMenuItem_Click(sender, e);
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }
