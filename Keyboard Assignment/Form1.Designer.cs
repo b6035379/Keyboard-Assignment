@@ -276,6 +276,7 @@
             this.btnPrevious.TabIndex = 75;
             this.btnPrevious.Text = "Prev-\r\nious";
             this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnNext
             // 

@@ -89,11 +89,6 @@ namespace Keyboard_Assignment
         {
             ModeMultiPress();
             timer1.Interval = _intIntervalRequired;
-            //Create a text file for the dictionary
-            string applicationPath = Directory.GetCurrentDirectory() + "\\";
-
-            DictionaryOutPutStream = File.CreateText(applicationPath + "Dictionary.txt");
-
         }
 
 
@@ -119,18 +114,7 @@ namespace Keyboard_Assignment
         }
 
         private void btn000_Click(object sender, EventArgs e)
-        {
-            string lineOfText;
-            bool found = false;
-            string applicationPath = Directory.GetCurrentDirectory() + "\\";
-
-            if (rtxtBuilder.Text != "")
-            {
-                //open dictionary START BACK FROM HERE
-                StreamReader myInputStream = File.OpenText(applicationPath + DictionaryOutPutStream);
-
-            }
-            
+        {            
             txtNotepad.AppendText(rtxtBuilder.Text + " ");
             _strKeyStrokes = string.Empty;
             rtxtBuilder.Clear();
@@ -680,5 +664,13 @@ namespace Keyboard_Assignment
 
                 }
             }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (rtxtBuilder.Text != "")
+            {
+                rtxtBuilder.Text = rtxtBuilder.Text.Remove(rtxtBuilder.TextLength - 1, 1);
+            }
+        }
         }
     }
