@@ -624,7 +624,7 @@ namespace Keyboard_Assignment
         {
             if (_booleanRequiresSaving == true)
             {
-                if (MessageBox.Show("File has not been saved. Do you wish to save?", "File not saved! Continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("File has not been saved. Do you wish to save?", "File not saved!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     // ask user if they wish to save the current file
                     saveToolStripMenuItem_Click(sender, e);
