@@ -40,18 +40,18 @@ namespace Keyboard_Assignment
         private readonly bool[] boolButtonPresssed = new bool[18];
 
         //Character Buttons Array
-        private readonly string[] button1Array = {"p", "q", "r", "s", "1", "P", "Q", "R", "S"};
+        private readonly string[] button1Array = { "p", "q", "r", "s", "1", "P", "Q", "R", "S" };
 
-        private readonly string[] button2Array = {"t", "u", "v", "2", "T", "U", "V"};
-        private readonly string[] button3Array = {"w", "x", "y", "z", "3", "W", "X", "Y", "Z"};
-        private readonly string[] button4Array = {"g", "h", "i", "4", "G", "H", "I"};
-        private readonly string[] button5Array = {"j", "k", "l", "5", "J", "K", "L"};
-        private readonly string[] button6Array = {"m", "n", "o", "6", "M", "N", "O"};
-        private readonly string[] button7Array = {".", ",", "\"", "7", "'", ":", ";"};
-        private readonly string[] button8Array = {"a", "b", "c", "8", "A", "B", "C"};
-        private readonly string[] button9Array = {"d", "e", "f", "9", "D", "E", "F"};
-        private readonly string[] buttonAsterixArray = {"*", "-", "_"};
-        private readonly string[] buttonHashArray = {"#", "-", "_"};
+        private readonly string[] button2Array = { "t", "u", "v", "2", "T", "U", "V" };
+        private readonly string[] button3Array = { "w", "x", "y", "z", "3", "W", "X", "Y", "Z" };
+        private readonly string[] button4Array = { "g", "h", "i", "4", "G", "H", "I" };
+        private readonly string[] button5Array = { "j", "k", "l", "5", "J", "K", "L" };
+        private readonly string[] button6Array = { "m", "n", "o", "6", "M", "N", "O" };
+        private readonly string[] button7Array = { ".", ",", "\"", "7", "'", ":", ";" };
+        private readonly string[] button8Array = { "a", "b", "c", "8", "A", "B", "C" };
+        private readonly string[] button9Array = { "d", "e", "f", "9", "D", "E", "F" };
+        private readonly string[] buttonAsterixArray = { "*", "-", "_" };
+        private readonly string[] buttonHashArray = { "#", "-", "_" };
         private readonly string MultiPress = "Multi-Press";
         private readonly string Prediction = "Prediction";
 
@@ -132,19 +132,15 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button1Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button1Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button1Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button1Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button1Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -174,19 +170,14 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button2Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button2Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button2Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button2Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button2Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -217,19 +208,13 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button3Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button3Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button3Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button3Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button3Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -258,19 +243,14 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button4Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button4Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button4Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button4Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button4Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -300,19 +280,13 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button5Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button5Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button5Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button5Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button5Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -343,19 +317,13 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button6Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button6Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button6Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button6Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button6Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -386,19 +354,13 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button7Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button7Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button7Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button7Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button7Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -428,19 +390,13 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button8Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button8Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button8Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button8Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button8Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -471,19 +427,13 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < button9Array.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        button9Array
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        button9Array[_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    button9Array
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    button9Array[_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -514,20 +464,14 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < buttonAsterixArray.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        buttonAsterixArray
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        buttonAsterixArray
-                            [_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    buttonAsterixArray
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    buttonAsterixArray
+                        [_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -558,20 +502,14 @@ namespace Keyboard_Assignment
 
             if (timer1.Enabled == true) //start timer cycle
             {
-                if (_intTimesClicked < buttonHashArray.Length)
-                {
-                    _intTimesClicked =
-                        (_intTimesClicked + 1) %
-                        buttonHashArray
-                            .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
-                    _strCharChosen =
-                        buttonHashArray
-                            [_intTimesClicked]; //set variable as the character selected at the current element.
-                }
-                else
-                {
-                    _intTimesClicked = -1;
-                }
+                _intTimesClicked =
+                    (_intTimesClicked + 1) %
+                    buttonHashArray
+                        .Length; //increase the value of intTimesClicked by for the length of the buttons associated array.
+                _strCharChosen =
+                    buttonHashArray
+                        [_intTimesClicked]; //set variable as the character selected at the current element.
+
                 //if its the first time the button has been pressed during this timer, add the chosen character.
                 if (_boolFirstVisit == true)
                 {
@@ -590,16 +528,37 @@ namespace Keyboard_Assignment
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //If the active file is not a new file, and it requires saving,ask if user wishes to save. If yes, then operate the save function.
             if (_strPresentFilePathName != "" && _booleanRequiresSaving == true)
             {
-                saveToolStripMenuItem_Click(sender, e);
+                if (MessageBox.Show("File has not been saved. Do you wish to save?", "File not saved!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // ask user if they wish to save the current file
+                    saveToolStripMenuItem_Click(sender, e);
+                }
+                _strCurrentFileName = "";
+                txtNotepad.Clear();
+                _booleanRequiresSaving = false;
+                _strPresentFilePathName = Directory.GetCurrentDirectory() + "\\"; 
+                return;
             }
 
-            else if (_strPresentFilePathName == "" && _booleanRequiresSaving)
+            // If the active file is a new file, and requires saving, operate the save as function. 
+            else if (_strPresentFilePathName == "" && _booleanRequiresSaving == true)
             {
-                saveAsToolStripMenuItem_Click(sender, e);
+                if (MessageBox.Show("File has not been saved. Do you wish to save?", "File not saved!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // ask user if they wish to save the current file
+                    saveToolStripMenuItem_Click(sender, e);
+                }
+                _strCurrentFileName = "";
+                txtNotepad.Clear();
+                _booleanRequiresSaving = false;
+                _strPresentFilePathName = Directory.GetCurrentDirectory() + "\\"; 
+                return;
             }
-
+            /* If the file doesnt need saving, clear saved file name variable, clear the notepad textbox, set the
+               bool 'RequiresSaving' back to false, then set the filepath name variable to the current directory */
             else if (_booleanRequiresSaving == false)
             {
                 _strCurrentFileName = "";
@@ -611,11 +570,13 @@ namespace Keyboard_Assignment
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // If the current file has no name, redirect to the save as function.
             if (_strCurrentFileName == "")
             {
-                // This redirect it to the Save As function
                 saveAsToolStripMenuItem_Click(sender, e);
             }
+            /* If the current file has a name, save the notepad values in the file currently opened text file, set requiredsaving to
+               false, change the saved filepath name variable to the current directory and file name, then close the save function */
             else
             {
                 StreamWriter outputStream = File.CreateText(openFileDialog1.FileName);
@@ -627,7 +588,7 @@ namespace Keyboard_Assignment
         }
 
         private void configureToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { //Open up a input box from MyDialogs.cs and get user to set _intIntervalRequired (the timer delay).
             _intIntervalRequired = Convert.ToInt32(
                 My_Dialogs.InputBox(
                     "Please enter the 'Delay Value' you require. 1000 is equal to a 1 second delay. At present, the 'Delay Value' is set to " +
@@ -637,8 +598,10 @@ namespace Keyboard_Assignment
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // If current file has no name, 
             if (_strCurrentFileName == "")
             {
+                //Open save dialog at file path '.C:\\'
                 saveFileDialog1.InitialDirectory = "C:\\";
 
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -646,21 +609,28 @@ namespace Keyboard_Assignment
                     StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
                     outputStream.Write(txtNotepad.Text);
                     _strCurrentFileName = saveFileDialog1.FileName;
+                    _booleanRequiresSaving = false;
                     outputStream.Close();
                 }
-                _booleanRequiresSaving = false;
+
             }
-            else
+            else //If file has a name, then call the save function instead.
             {
                 saveToolStripMenuItem_Click(sender, e);
-                _booleanRequiresSaving = false;
             }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (_booleanRequiresSaving == true)
-                saveToolStripMenuItem_Click(sender, e);
+            {
+                if (MessageBox.Show("File has not been saved. Do you wish to save?", "File not saved! Continue?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    // ask user if they wish to save the current file
+                    saveToolStripMenuItem_Click(sender, e);
+                }
+                Close();
+            }
             else
                 Close();
         }
@@ -670,25 +640,28 @@ namespace Keyboard_Assignment
             if (_strCurrentFileName == "")
             {
                 if (_booleanRequiresSaving == true)
-                    saveToolStripMenuItem_Click(sender, e);
-
-                openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\";
-
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    StreamReader inputStream = File.OpenText(openFileDialog1.FileName);
-                    txtNotepad.Text = inputStream.ReadToEnd();
-                    _strCurrentFileName = openFileDialog1.FileName;
-                    _strPresentFilePathName = Directory.GetCurrentDirectory() + _strCurrentFileName;
-                    _booleanRequiresSaving = false;
-                    inputStream.Close();
+                    if (MessageBox.Show("File has not been saved. Do you wish to save?", "File not saved!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        // ask user if they wish to save the current file
+                        saveToolStripMenuItem_Click(sender, e);
+                    }
+                    return;
+                    }
+                    // If booleanRequires saving is still false, 
+                    openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory() + "\\";
+
+                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        StreamReader inputStream = File.OpenText(openFileDialog1.FileName);
+                        txtNotepad.Text = inputStream.ReadToEnd();
+                        _strCurrentFileName = openFileDialog1.FileName;
+                        _strPresentFilePathName = Directory.GetCurrentDirectory() + _strCurrentFileName;
+                        _booleanRequiresSaving = false;
+                        inputStream.Close();
+                    }
+
                 }
-            }
-            else
-            {
-                // ask user if they wish to save the current file
-                saveToolStripMenuItem_Click(sender, e);
             }
         }
     }
-}
