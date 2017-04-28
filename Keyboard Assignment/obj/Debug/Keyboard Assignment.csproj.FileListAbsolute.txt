@@ -7,3 +7,14 @@ C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.exe
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.pdb
 C:\Users\Michael\Desktop\Programming\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard_Assignment.FormMainWindow.resources
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.exe.config
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.exe
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.pdb
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.exe
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.pdb
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.exe.CodeAnalysisLog.xml
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\bin\Debug\Keyboard Assignment.exe.lastcodeanalysissucceeded
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard_Assignment.FormMainWindow.resources
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard_Assignment.Properties.Resources.resources
+C:\Users\Michael\Desktop\Keyboard Assignment\Keyboard Assignment\obj\Debug\Keyboard Assignment.csproj.GenerateResource.Cache
